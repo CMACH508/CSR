@@ -3,6 +3,8 @@
 This is the official implementation of our ICLR'25 accepted paper:  
 ["Towards Generalizable Reinforcement Learning via Causality-Guided Self-Adaptive Representations"](https://arxiv.org/pdf/2407.20651).
 
+<img src="figures/framework.png" width="100%"/>
+
 ## Introduction
 
 General intelligence requires quick adaption across tasks. While existing reinforcement learning (RL) methods have made progress in generalization, they typically assume only distribution changes between source and target domains. In this paper, we explore a wider range of scenarios where not only the distribution but also the environment spaces may change. For example, in the CoinRun environment, we train agents from easy levels and generalize them to difficulty levels where there could be new enemies that have never occurred before. To address this challenging setting, we introduce a *causality-guided self-adaptive representation*-based approach, called CSR, that equips the agent to generalize effectively across tasks with evolving dynamics. Specifically, we employ causal representation learning to characterize the latent causal variables within the RL system. Such compact causal representations uncover the structural relationships among variables, enabling the agent to autonomously determine whether changes in the environment stem from distribution shifts or variations in space, and to precisely locate these changes. We then devise a three-step strategy to fine-tune the causal model under different scenarios accordingly. Empirical experiments show that CSR efficiently adapts to the target domains with only a few samples and outperforms state-of-the-art baselines on a wide range of scenarios, including our simulated environments, CartPole, CoinRun and Atari games.
@@ -25,8 +27,6 @@ pip install -r requirements.txt
 ```
 
 ## Policy Adaptation
-
-<img src="figures/framework.png" width="100%"/>
 
 **CoinRun**
 
